@@ -32,7 +32,7 @@
                 finally,
                 for,
                 from,
-                func
+                func,
                 if,
                 import,
                 in,
@@ -74,6 +74,62 @@
 			);
 			Type = "xcode.syntax.keyword";
 			AltType = "xcode.syntax.identifier";
+		};
+	},
+
+    // * Section: coloring
+	{
+		Identifier = "xcode.lang.nim";
+		Description = "Nim Coloring";
+		BasedOn = "xcode.lang.simpleColoring";
+		IncludeInMenu = YES;
+		Name = Nim;
+		Syntax = {
+			Tokenizer = "xcode.lang.nim.lexer";
+			IncludeRules = (
+                // TODO
+			);
+			Type = "xcode.syntax.plain";
+			DirtyPreviousRightEdge = YES;
+		};
+	},
+	{
+		Identifier = "xcode.lang.nim.lexer";
+		Syntax = {
+			SourceScannerClassName = IndentScanner;
+			IncludeRules = (
+				"xcode.lang.comment.singleline.pound",
+				"xcode.lang.string",
+				"xcode.lang.character",
+				"xcode.lang.number",
+				"xcode.lang.nim.identifier",
+			);
+			Type = "xcode.syntax.plain";
+		};
+	},
+    {
+		Identifier = "xcode.lang.python";
+		Syntax = {
+			Tokenizer = "xcode.lang.nim.lexer";
+			Start = "(";
+			End = ")";
+            Until = "]";
+			Recursive = YES;
+			IncludeRules = (
+				"xcode.lang.python.bracketexpr",
+			);
+		};
+	},
+	{
+		Identifier = "xcode.lang.nim.bracketexpr";
+		Syntax = {
+			Tokenizer = "xcode.lang.nim.lexer";
+			Start = "[";
+			End = "]";
+			Recursive = YES;
+			IncludeRules = (
+				"xcode.lang.nim.parenexpr",
+			);
 		};
 	},
 )

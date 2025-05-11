@@ -20,8 +20,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9FAA8FCE2DD032B000232F4A /* TestNim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestNim; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FAA8FE72DD0379400232F4A /* config.nims */ = {isa = PBXFileReference; lastKnownFileType = text; path = config.nims; sourceTree = "<group>"; };
+		9FEC59B62DD08C13009752CD /* TestNim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestNim; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -48,14 +48,14 @@
 			children = (
 				9FAA8FE72DD0379400232F4A /* config.nims */,
 				9FAA8FD02DD032B000232F4A /* src */,
-				9FAA8FCF2DD032B000232F4A /* Products */,
+				9FEC59B72DD08C13009752CD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9FAA8FCF2DD032B000232F4A /* Products */ = {
+		9FEC59B72DD08C13009752CD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9FAA8FCE2DD032B000232F4A /* TestNim */,
+				9FEC59B62DD08C13009752CD /* TestNim */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,7 +83,7 @@
 			packageProductDependencies = (
 			);
 			productName = TestNim;
-			productReference = 9FAA8FCE2DD032B000232F4A /* TestNim */;
+			productReference = 9FEC59B62DD08C13009752CD /* TestNim */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -110,7 +110,6 @@
 			mainGroup = 9FAA8FC52DD032B000232F4A;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 9FAA8FCF2DD032B000232F4A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -138,7 +137,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nexport PATH=\"~/repos/Nim-dev/bin:$PATH\"\n\nset -x\nnim c \\\n    --outdir:$TARGET_BUILD_DIR \\\n    --cc:clang \\\n    --out:\"$TARGET_BUILD_DIR/$EXECUTABLE_NAME\" \\\n    --nimcache:\"$TARGET_BUILD_DIR/nimcache\" \\\n    -d:buildType:\"$CONFIGURATION\" \\\n    src/main.nim\n";
+			shellScript = "source ../env.sh\n\nset -x\nnim c \\\n    --outdir:$TARGET_BUILD_DIR \\\n    --cc:clang \\\n    --out:\"$TARGET_BUILD_DIR/$EXECUTABLE_NAME\" \\\n    --nimcache:\"$TARGET_BUILD_DIR/nimcache\" \\\n    -d:buildType:\"$CONFIGURATION\" \\\n    src/main.nim\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -187,7 +186,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = MBDGB8SG5T;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;

@@ -3,13 +3,11 @@
 set -x
 
 # Create plug-ins directory if it doesn't exist
-# plugins_dir=~/Library/Developer/Xcode/Plug-ins/
-# if [ ! -d "$plugins_dir" ]; then
-# 	mkdir $plugins_dir
-# fi
-# 
-# # Copy the IDE Plugin to the plug-ins directory
-# cp -r Plug-ins/Nim.ideplugin $plugins_dir
+plugins_dir=~/Library/Developer/Xcode/Plug-ins/
+mkdir -p $plugins_dir
+
+# Copy the IDE Plugin to the plug-ins directory
+cp -r Plug-ins/Nim.ideplugin $plugins_dir
 
 #Get the selected Xcode.app's path
 xcode_path=$(xcode-select -p)

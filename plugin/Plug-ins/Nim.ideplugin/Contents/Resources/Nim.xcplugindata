@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>plug-in</key>
+	<dict>
+		<key>extensions</key>
+		<dict>
+			<key>Xcode.FileDataType.Nim</key>
+			<dict>
+				<key>id</key>
+				<string>Xcode.FileDataType.Nim</string>
+				<key>localizedDescription</key>
+				<string>Nim</string>
+				<key>name</key>
+				<string>File type for Nim</string>
+				<key>point</key>
+				<string>Xcode.FileDataType</string>
+				<key>typeConformedTo</key>
+				<array>
+					<dict>
+						<key>typeIdentifier</key>
+						<string>public.source-code</string>
+					</dict>
+				</array>
+				<key>typeIdentifier</key>
+				<string>public.nim-source</string>
+				<key>version</key>
+				<string>1.0</string>
+			</dict>
+			<key>Xcode.FileDataTypeDetector.Nim</key>
+			<dict>
+				<key>detectedTypeIdentifier</key>
+				<string>public.nim-source</string>
+				<key>id</key>
+				<string>Xcode.FileDataTypeDetector.Nim</string>
+				<key>matchesExtension</key>
+				<string>nim</string>
+				<key>point</key>
+				<string>Xcode.FileDataTypeDetector</string>
+			</dict>
+			<key>Xcode.SourceCodeLanguage.Nim</key>
+			<dict>
+				<key>commentSyntax</key>
+				<array>
+					<dict>
+						<key>prefix</key>
+						<string>#</string>
+					</dict>
+				</array>
+				<key>conformsTo</key>
+				<array>
+					<dict>
+						<key>identifier</key>
+						<string>Xcode.SourceCodeLanguage.Generic</string>
+					</dict>
+				</array>
+				<key>fileDataType</key>
+				<array>
+					<dict>
+						<key>identifier</key>
+						<string>public.nim-source</string>
+					</dict>
+				</array>
+				<key>id</key>
+				<string>Xcode.SourceCodeLanguage.Nim</string>
+				<key>languageName</key>
+				<string>Nim</string>
+				<key>languageSpecification</key>
+				<string>xcode.lang.nim</string>
+				<key>name</key>
+				<string>Nim Language</string>
+				<key>point</key>
+				<string>Xcode.SourceCodeLanguage</string>
+				<key>version</key>
+				<string>1.0</string>
+			</dict>
+			<key>Xcode.IDEKit.Inspector.FileIdentityAndType.public.nim-source</key>
+			<dict>
+				<key>fileDataType</key>
+				<string>public.nim-source</string>
+				<key>group</key>
+				<string>Xcode.IDEKit.Inspector.FileInspectorTypeGroup.Sourcecode.Various</string>
+				<key>id</key>
+				<string>Xcode.IDEKit.Inspector.FileIdentityAndType.public.nim-source</string>
+				<key>name</key>
+				<string>File Inspector Entry - Nim Document</string>
+				<key>point</key>
+				<string>Xcode.IDEKit.FileInspectorTypeGroupEntry</string>
+				<key>version</key>
+				<string>0.1</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

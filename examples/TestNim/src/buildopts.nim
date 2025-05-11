@@ -1,0 +1,1 @@
+const buildType* {.strdefine.} = "Debug"

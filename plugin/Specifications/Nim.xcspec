@@ -1,0 +1,15 @@
+/*
+ * Nim.xcspec: Xcode file type for Nim
+ *
+ */
+
+(
+	{
+		Type = FileType;
+		Identifier = sourcecode.nim;
+		BasedOn = sourcecode;
+		Name = "Nim file";
+		Extensions = ( nim );
+		Language = "xcode.lang.nim";
+	}
+)

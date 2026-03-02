@@ -1,0 +1,328 @@
+(
+	{
+		Identifier = "xcode.lang.odin.identifier";
+		Syntax = {
+			StartChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
+			Chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_";
+			Words = (
+				any,
+				asm,
+				auto_cast,
+				b16,
+				b32,
+				b64,
+				b8,
+				bit_field,
+				bit_set,
+				bool,
+				break,
+				byte,
+				case,
+				cast,
+				context,
+				continue,
+				cstring,
+				defer,
+				distinct,
+				do,
+				dynamic,
+				else,
+				enum,
+				f16,
+				f16be,
+				f16le,
+				f32,
+				f32be,
+				f32le,
+				f64,
+				f64be,
+				f64le,
+				fallthrough,
+				false,
+				for,
+				foreign,
+				i128,
+				i128be,
+				i128le,
+				i16,
+				i16be,
+				i16le,
+				i32,
+				i32be,
+				i32le,
+				i64,
+				i64be,
+				i64le,
+				i8,
+				if,
+				import,
+				in,
+				inline,
+				int,
+				map,
+				matrix,
+				nil,
+				no_inline,
+				not_in,
+				or_break,
+				or_continue,
+				or_else,
+				or_return,
+				package,
+				proc,
+				rawptr,
+				return,
+				rune,
+				string,
+				string16,
+				struct,
+				switch,
+				transmute,
+				true,
+				typeid,
+				u128,
+				u128be,
+				u128le,
+				u16,
+				u16be,
+				u16le,
+				u32,
+				u32be,
+				u32le,
+				u64,
+				u64be,
+				u64le,
+				u8,
+				uint,
+				union,
+				using,
+				uintptr,
+				when,
+				where
+			);
+			Type = "xcode.syntax.keyword";
+			AltType = "xcode.syntax.identifier";
+		};
+	},
+	{
+		Identifier = "xcode.lang.odin.builtin";
+		Syntax = {
+			StartChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
+			Chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_";
+			Words = (
+				align_of,
+				append,
+				cap,
+				delete,
+				free,
+				len,
+				make,
+				new,
+				offset_of,
+				size_of,
+				typeid_of
+			);
+			Type = "xcode.syntax.keyword";
+			AltType = "xcode.syntax.identifier";
+		};
+	},
+
+	{
+		Identifier = "xcode.lang.odin";
+		Description = "Odin Coloring";
+		BasedOn = "xcode.lang.simpleColoring";
+		IncludeInMenu = YES;
+		UsesCLikeIndentation = YES;
+		Name = Odin;
+		Syntax = {
+			Tokenizer = "xcode.lang.odin.lexer.toplevel";
+			IncludeRules = (
+				"xcode.lang.odin.package",
+				"xcode.lang.odin.import",
+				"xcode.lang.odin.struct.declaration",
+				"xcode.lang.odin.enum.declaration",
+				"xcode.lang.odin.union.declaration",
+				"xcode.lang.odin.proc.declaration",
+				"xcode.lang.odin.block",
+				"xcode.lang.odin.parenexpr",
+				"xcode.lang.odin.bracketexpr",
+			);
+			Type = "xcode.syntax.plain";
+			DirtyPreviousRightEdge = YES;
+		};
+	},
+	{
+		Identifier = "xcode.lang.odin.lexer.toplevel";
+		Syntax = {
+			IncludeRules = (
+				"xcode.lang.comment",
+				"xcode.lang.comment.singleline",
+				"xcode.lang.string",
+				"xcode.lang.character",
+				"xcode.lang.number",
+				"xcode.lang.odin.builtin",
+				"xcode.lang.odin.identifier",
+			);
+			Type = "xcode.syntax.plain";
+		};
+	},
+	{
+		Identifier = "xcode.lang.odin.lexer";
+		Syntax = {
+			IncludeRules = (
+				"xcode.lang.comment",
+				"xcode.lang.comment.singleline",
+				"xcode.lang.string",
+				"xcode.lang.character",
+				"xcode.lang.number",
+				"xcode.lang.odin.builtin",
+				"xcode.lang.odin.identifier",
+			);
+			Type = "xcode.syntax.plain";
+		};
+	},
+	{
+		Identifier = "xcode.lang.odin.name";
+		Syntax = {
+			Tokenizer = "xcode.lang.odin.lexer";
+			Rules = (
+				"xcode.lang.odin.identifier",
+			);
+			Type = "xcode.syntax.name.other";
+		};
+	},
+	{
+		Identifier = "xcode.lang.odin.package";
+		Syntax = {
+			Tokenizer = "xcode.lang.odin.lexer.toplevel";
+			Rules = (
+				package,
+				"xcode.lang.odin.name",
+			);
+		};
+	},
+	{
+		Identifier = "xcode.lang.odin.import";
+		Syntax = {
+			Tokenizer = "xcode.lang.odin.lexer.toplevel";
+			Rules = (
+				import,
+				"xcode.lang.odin.import.alias?",
+				"xcode.lang.string",
+			);
+		};
+	},
+	{
+		Identifier = "xcode.lang.odin.import.alias";
+		Syntax = {
+			Tokenizer = "xcode.lang.odin.lexer";
+			Rules = (
+				"xcode.lang.odin.name",
+			);
+		};
+	},
+	{
+		Identifier = "xcode.lang.odin.declaration.name";
+		Syntax = {
+			Tokenizer = "xcode.lang.odin.lexer";
+			Rules = (
+				"xcode.lang.odin.identifier",
+			);
+			Type = "xcode.syntax.name.type";
+		};
+	},
+	{
+		Identifier = "xcode.lang.odin.struct.declaration";
+		Syntax = {
+			Tokenizer = "xcode.lang.odin.lexer";
+			Rules = (
+				"xcode.lang.odin.declaration.name",
+				"::",
+				struct,
+			);
+			Type = "xcode.syntax.definition.struct";
+		};
+	},
+	{
+		Identifier = "xcode.lang.odin.enum.declaration";
+		Syntax = {
+			Tokenizer = "xcode.lang.odin.lexer";
+			Rules = (
+				"xcode.lang.odin.declaration.name",
+				"::",
+				enum,
+			);
+			Type = "xcode.syntax.definition.enum";
+		};
+	},
+	{
+		Identifier = "xcode.lang.odin.union.declaration";
+		Syntax = {
+			Tokenizer = "xcode.lang.odin.lexer";
+			Rules = (
+				"xcode.lang.odin.declaration.name",
+				"::",
+				union,
+			);
+			Type = "xcode.syntax.definition.struct";
+		};
+	},
+	{
+		Identifier = "xcode.lang.odin.proc.declaration";
+		Syntax = {
+			Tokenizer = "xcode.lang.odin.lexer";
+			Rules = (
+				"xcode.lang.odin.declaration.name",
+				"::",
+				proc,
+			);
+			Type = "xcode.syntax.definition.function";
+		};
+	},
+	{
+		Identifier = "xcode.lang.odin.block";
+		Syntax = {
+			Tokenizer = "xcode.lang.odin.lexer";
+			Start = "{";
+			End = "}";
+			Foldable = YES;
+			Recursive = YES;
+			IncludeRules = (
+				"xcode.lang.odin.import",
+				"xcode.lang.odin.struct.declaration",
+				"xcode.lang.odin.enum.declaration",
+				"xcode.lang.odin.union.declaration",
+				"xcode.lang.odin.proc.declaration",
+				"xcode.lang.odin.block",
+				"xcode.lang.odin.parenexpr",
+				"xcode.lang.odin.bracketexpr",
+			);
+		};
+	},
+	{
+		Identifier = "xcode.lang.odin.parenexpr";
+		Syntax = {
+			Tokenizer = "xcode.lang.odin.lexer";
+			Start = "(";
+			End = ")";
+			Recursive = YES;
+			IncludeRules = (
+				"xcode.lang.odin.block",
+				"xcode.lang.odin.bracketexpr",
+			);
+		};
+	},
+	{
+		Identifier = "xcode.lang.odin.bracketexpr";
+		Syntax = {
+			Tokenizer = "xcode.lang.odin.lexer";
+			Start = "[";
+			End = "]";
+			Recursive = YES;
+			IncludeRules = (
+				"xcode.lang.odin.block",
+				"xcode.lang.odin.parenexpr",
+			);
+		};
+	},
+)

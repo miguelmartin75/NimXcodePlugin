@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>plug-in</key>
+	<dict>
+		<key>extensions</key>
+		<dict>
+				<key>Xcode.FileDataType.Odin</key>
+				<dict>
+				<key>id</key>
+				<string>Xcode.FileDataType.Odin</string>
+				<key>localizedDescription</key>
+				<string>Odin</string>
+				<key>name</key>
+				<string>File type for Odin</string>
+				<key>point</key>
+				<string>Xcode.FileDataType</string>
+				<key>typeConformedTo</key>
+				<array>
+					<dict>
+						<key>typeIdentifier</key>
+						<string>public.source-code</string>
+					</dict>
+				</array>
+					<key>typeIdentifier</key>
+					<string>sourcecode.odin</string>
+				<key>version</key>
+				<string>1.0</string>
+			</dict>
+				<key>Xcode.FileDataTypeDetector.Odin</key>
+				<dict>
+					<key>detectedTypeIdentifier</key>
+					<string>sourcecode.odin</string>
+				<key>id</key>
+				<string>Xcode.FileDataTypeDetector.Odin</string>
+				<key>matchesExtension</key>
+				<string>odin</string>
+				<key>point</key>
+				<string>Xcode.FileDataTypeDetector</string>
+			</dict>
+			<key>Xcode.SourceCodeLanguage.Odin</key>
+			<dict>
+				<key>commentSyntax</key>
+				<array>
+					<dict>
+						<key>prefix</key>
+						<string>//</string>
+					</dict>
+				</array>
+				<key>conformsTo</key>
+				<array>
+					<dict>
+						<key>identifier</key>
+						<string>Xcode.SourceCodeLanguage.Generic</string>
+					</dict>
+				</array>
+					<key>fileDataType</key>
+					<array>
+						<dict>
+							<key>identifier</key>
+							<string>sourcecode.odin</string>
+						</dict>
+					</array>
+				<key>id</key>
+				<string>Xcode.SourceCodeLanguage.Odin</string>
+				<key>languageName</key>
+				<string>Odin</string>
+				<key>languageSpecification</key>
+				<string>xcode.lang.odin</string>
+				<key>name</key>
+				<string>Odin Language</string>
+				<key>point</key>
+				<string>Xcode.SourceCodeLanguage</string>
+				<key>version</key>
+				<string>1.0</string>
+			</dict>
+				<key>Xcode.IDEKit.Inspector.FileIdentityAndType.sourcecode.odin</key>
+				<dict>
+					<key>fileDataType</key>
+					<string>sourcecode.odin</string>
+					<key>group</key>
+					<string>Xcode.IDEKit.Inspector.FileInspectorTypeGroup.Sourcecode.Various</string>
+					<key>id</key>
+					<string>Xcode.IDEKit.Inspector.FileIdentityAndType.sourcecode.odin</string>
+				<key>name</key>
+				<string>File Inspector Entry - Odin Document</string>
+				<key>point</key>
+				<string>Xcode.IDEKit.FileInspectorTypeGroupEntry</string>
+				<key>version</key>
+				<string>0.1</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

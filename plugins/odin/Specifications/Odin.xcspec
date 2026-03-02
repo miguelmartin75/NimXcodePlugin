@@ -1,0 +1,15 @@
+/*
+ * Odin.xcspec: Xcode file type for Odin
+ *
+ */
+
+(
+	{
+		Type = FileType;
+		Identifier = sourcecode.odin;
+		BasedOn = sourcecode;
+		Name = "Odin file";
+		Extensions = ( odin );
+		Language = "xcode.lang.odin";
+	}
+)
